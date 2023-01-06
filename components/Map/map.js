@@ -8,6 +8,17 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline, CircleMarker } from '
 export default function Map() {
     const position = [49.28594, -123.11129];
 
+    const polyline = [
+        [49.28594, -123.11129],
+        [49.28250, -123.11865],
+        [49.27450, -123.12189]
+
+    ]
+
+    const purpleOption = { color: 'purple' }
+    const redOption = { color: 'red' }
+
+
     return (
         <MapContainer className={style.map} center={position} zoom={14} scrollWheelZoom={true}>
             <TileLayer
@@ -21,7 +32,13 @@ export default function Map() {
                 </Popup>
             </Marker>
 
-        </MapContainer>
+            <CircleMarker center={[49.27450, -123.12189]} pathOptions={redOption} radius={20}>
+                <Popup>
+                    You've reached your destination!
+                </Popup>
+            </CircleMarker>
 
+            <Polyline pathOptions={purpleOption} positions={polyline} />
+        </MapContainer>
     )
 }
