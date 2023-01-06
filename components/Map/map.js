@@ -2,6 +2,7 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import style from '../../styles/Home.module.css'
+import { markerList } from '../../data/marker_names'
 
 import { MapContainer, TileLayer, Marker, Popup, Polyline, CircleMarker } from 'react-leaflet'
 
@@ -53,9 +54,13 @@ export default function Map() {
 
     const kingGeorgeColour = { color: '#ff8ab1' }
 
+    // Names
+    const StationName = [
+
+    ]
+
     //Marker Colour
     const redOption = { color: 'red' }
-
 
     return (
         <MapContainer className={style.map} center={position} zoom={14} scrollWheelZoom={true}>
@@ -64,11 +69,17 @@ export default function Map() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <Marker position={position}>
+            {/* <Marker position={position}>
                 <Popup>
                     Skytrain. <br /> Waterfront.
                 </Popup>
-            </Marker>
+            </Marker> */}
+
+            {markerList.map((item, index) =>
+                <Marker position={item.coords} key={index}>
+                    <Popup>{item.station}</Popup>
+                </Marker>
+            )}
 
             <CircleMarker center={[49.27450, -123.12189]} pathOptions={redOption} radius={20}>
                 <Popup>
