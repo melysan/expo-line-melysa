@@ -48,14 +48,14 @@ export default function Map() {
 
 
     //Shared Polyline Colour
-    const sharedLineColour = { color: '#1c93e8' }
+    const sharedLineColour = { color: '#b39dd6' }
 
-    const productionColour = { color: '#ee82ff' }
+    const productionColour = { color: '#e37ff6' }
 
-    const kingGeorgeColour = { color: '#ff8ab1' }
+    const kingGeorgeColour = { color: '#f37aa6' }
 
     //Marker Colour
-    const redOption = { color: 'red' }
+    const markerColour = { color: 'black' }
 
     return (
         <MapContainer className={style.map} center={position} zoom={14} scrollWheelZoom={true}>
@@ -77,26 +77,26 @@ export default function Map() {
             )}
 
 
-            <CircleMarker center={[49.2859, -123.1112]} pathOptions={redOption} radius={20}>
+            <CircleMarker center={[49.2859, -123.1112]} pathOptions={markerColour} radius={20}>
                 <Popup>
                     This is your starting destination at Waterfront Station.
                 </Popup>
             </CircleMarker>
 
 
-            <CircleMarker center={[49.2015, -122.9126]} pathOptions={redOption} radius={20}>
+            <CircleMarker center={[49.2015, -122.9126]} pathOptions={markerColour} radius={20}>
                 <Popup>
                     You have arrived at New Westminster Station!
                 </Popup>
             </CircleMarker>
 
-            <CircleMarker center={[49.2534, -122.9181]} pathOptions={redOption} radius={20}>
+            <CircleMarker center={[49.2534, -122.9181]} pathOptions={markerColour} radius={20}>
                 <Popup>
                     You have arrived at Production-Way University Station!
                 </Popup>
             </CircleMarker>
 
-            <CircleMarker center={[49.1828, -122.8448]} pathOptions={redOption} radius={20}>
+            <CircleMarker center={[49.1828, -122.8448]} pathOptions={markerColour} radius={20}>
                 <Popup>
                     You have arrived at King George Station!
                 </Popup>
