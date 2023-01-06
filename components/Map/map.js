@@ -54,11 +54,6 @@ export default function Map() {
 
     const kingGeorgeColour = { color: '#ff8ab1' }
 
-    // Names
-    const StationName = [
-
-    ]
-
     //Marker Colour
     const redOption = { color: 'red' }
 
@@ -81,17 +76,35 @@ export default function Map() {
                 </Marker>
             )}
 
-            <CircleMarker center={[49.27450, -123.12189]} pathOptions={redOption} radius={20}>
+
+            <CircleMarker center={[49.2859, -123.1112]} pathOptions={redOption} radius={20}>
                 <Popup>
-                    You've reached your destination!
+                    This is your starting destination at Waterfront Station.
+                </Popup>
+            </CircleMarker>
+
+
+            <CircleMarker center={[49.2015, -122.9126]} pathOptions={redOption} radius={20}>
+                <Popup>
+                    You have arrived at New Westminster Station!
+                </Popup>
+            </CircleMarker>
+
+            <CircleMarker center={[49.2534, -122.9181]} pathOptions={redOption} radius={20}>
+                <Popup>
+                    You have arrived at Production-Way University Station!
+                </Popup>
+            </CircleMarker>
+
+            <CircleMarker center={[49.1828, -122.8448]} pathOptions={redOption} radius={20}>
+                <Popup>
+                    You have arrived at King George Station!
                 </Popup>
             </CircleMarker>
 
             <Polyline pathOptions={sharedLineColour} positions={polyline} />
             <Polyline pathOptions={productionColour} positions={productionPolyline} />
             <Polyline pathOptions={kingGeorgeColour} positions={kingGeorgePolyline} />
-
-
 
         </MapContainer>
     )
