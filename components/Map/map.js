@@ -27,7 +27,33 @@ export default function Map() {
         // Expo Line Splits
     ]
 
-    const purpleOption = { color: 'purple' }
+    // Expo Line towards Production Way-University
+    const productionPolyline = [
+        [49.2015, -122.9126], // New Westminster
+        [49.2247, -122.8894], // Sapperton
+        [49.2333, -122.8829], // Braid
+        [49.2485, -122.8970], // Lougheed
+        [49.2534, -122.9181], // Production-Way University
+    ]
+
+    // Expo Line towards King George
+    const kingGeorgePolyline = [
+        [49.2015, -122.9126], // New Westminster
+        [49.2044, -122.8743], // Scott Road
+        [49.1990, -122.8507], // Gateway
+        [49.1896, -122.8480], // Surrey Central
+        [49.1828, -122.8448], // King George
+    ]
+
+
+    //Shared Polyline Colour
+    const sharedLineColour = { color: '#1c93e8' }
+
+    const productionColour = { color: '#ee82ff' }
+
+    const kingGeorgeColour = { color: '#ff8ab1' }
+
+    //Marker Colour
     const redOption = { color: 'red' }
 
 
@@ -50,7 +76,12 @@ export default function Map() {
                 </Popup>
             </CircleMarker>
 
-            <Polyline pathOptions={purpleOption} positions={polyline} />
+            <Polyline pathOptions={sharedLineColour} positions={polyline} />
+            <Polyline pathOptions={productionColour} positions={productionPolyline} />
+            <Polyline pathOptions={kingGeorgeColour} positions={kingGeorgePolyline} />
+
+
+
         </MapContainer>
     )
 }
